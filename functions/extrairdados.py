@@ -1,9 +1,19 @@
 import csv
 #Importa biblioteca para trabalhar com arquivos csv: tabelas para excel.
 
-fields = ['Name', 'CPF', 'Documentos', 'Etapa', 'Unidade']   
+fields = ['Nome', 'CPF', 'Documentos', 'Etapa', 'Unidade']   
 #Determina as colunas da tabela.
 
+while True:
+    lista = []
+    lista.append(str(input('Digite o nome: ')))
+    break
+
+print(lista)
+
+
+
+'''
 rows = [ ['Maria', '12345678900', '2', 'Gardenia', '17'],   
          ['Jose', '12345678900', '2', 'Jacarandas', '58'],   
          ['Paulo', '12345678900', '2', 'Pitangueiras', '23'],   
@@ -24,3 +34,4 @@ with open(filename, 'w') as csvfile:
           
     
     csvwriter.writerows(rows) #linhas
+'''
