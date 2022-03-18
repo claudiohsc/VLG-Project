@@ -1,15 +1,25 @@
 import csv
+import keyboard
 #Importa biblioteca para trabalhar com arquivos csv: tabelas para excel.
 
-fields = ['Nome', 'CPF', 'Documentos', 'Etapa', 'Unidade']   
+fields = ['Nome', 'CPF', 'Documentos', 'Etapa', 'Unidade']
 #Determina as colunas da tabela.
 
-while True:
+rows = []
+
+while keyboard.is_pressed('esc') == False:
     lista = []
-    lista.append(str(input('Digite o nome: ')))
+    lista.append(str(input('Digite o nome: '))) #Recebe as informações e guarda em uma lista.
+    lista.append(str(input('Digite o CPF: ')))
+    lista.append(str(input('Digite a quantidade de procurações: ')))
+    lista.append(str(input('Digite a etapa: ')))
+    lista.append(str(input('Digite a unidade: ')))
+
+    rows.append(lista)
     break
 
 print(lista)
+print(rows)
 
 
 
