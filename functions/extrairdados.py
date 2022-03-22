@@ -7,16 +7,19 @@ fields = ['Nome', 'CPF', 'Documentos', 'Etapa', 'Unidade']
 
 rows = []
 
-while keyboard.is_pressed('esc') == False:
+while True:
     lista = []
     lista.append(str(input('Digite o nome: '))) #Recebe as informações e guarda em uma lista.
     lista.append(str(input('Digite o CPF: ')))
     lista.append(str(input('Digite a quantidade de procurações: ')))
     lista.append(str(input('Digite a etapa: ')))
     lista.append(str(input('Digite a unidade: ')))
-
+    
     rows.append(lista)
-    break
+    resp = str(input('Deseja continuar? [S/N] '))
+    if resp in 'Nn':
+        break
+    
 
 print(lista)
 print(rows)
