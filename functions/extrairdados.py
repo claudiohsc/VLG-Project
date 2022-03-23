@@ -1,19 +1,25 @@
 import csv
 import keyboard
-#Importa biblioteca para trabalhar com arquivos csv: tabelas para excel.
+#Importa biblioteca para trabalhar com arquivos csv: tabelas para excel;
 
 colunas = ['Nome', 'CPF', 'Documentos', 'Etapa', 'Unidade']
-#Determina as colunas da tabela.
+#Determina as colunas da tabela;
 
 rows = []
 
 while True:
     lista = []
-    lista.append(str(input('Digite o nome: '))) #Recebe as informações e guarda em uma lista.
-    lista.append(str(input('Digite o CPF: ')))
+    lista.append(str(input('Digite o nome: ')).upper()) #Recebe as informações e guarda em uma lista;
+
+    cpf = str(input('Digite o CPF: '))
+    if len(cpf) < 11:
+        cpf = cpf.zfill(11) #completa com zeros à esquerda, se o tamanho for menor que 11;
+    cpf = cpf[:3] + "." + cpf[3:6] + "." + cpf[6:9] + "-" + cpf[9:] #Adiciona pontuação no CPF;
+
+    lista.append(cpf)
     lista.append(str(input('Digite a quantidade de procurações: ')))
-    lista.append(str(input('Digite a etapa: ')))
-    lista.append(str(input('Digite a unidade: ')))
+    lista.append(str(input('Digite a etapa: ')).upper())
+    lista.append(int(input('Digite a unidade: ')))
     
     rows.append(lista)
     resp = str(input('Deseja continuar? [S/N] '))
